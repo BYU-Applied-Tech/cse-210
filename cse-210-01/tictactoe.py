@@ -7,6 +7,17 @@ board = ["1", "2", "3",
         "4", "5", "6",
         "7", "8", "9"]
 
+currentPlayer = 'x'
+gameRunning = True
+winner = None
+
+def main():
+    while gameRunning:
+        displayGameBoard(board)
+        playerInput(board, currentPlayer)
+        checkWinner(board)
+        switchPlayer()
+
 # Display game board
 def displayGameBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -103,3 +114,15 @@ def checkWinner(board):
         displayGameBoard(board)
         print(f"\nIt's a draw!\n\n\033[1;34;43mGood game. Thanks for playing!")
         gameRunning = False
+
+# Function to switch players
+def switchPlayer():
+    global currentPlayer
+
+    # If current player is x then switch to player o
+    if currentPlayer == 'x':
+        currentPlayer = 'o'
+    else:
+        currentPlayer = 'x'
+
+main()
