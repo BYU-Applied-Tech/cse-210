@@ -24,6 +24,9 @@ class Director:
         self.player_input = input("Higher or lower? [h/l]: ")
 
     def make_evaluation(self):
+        if not self.is_playing:
+            return 
+        
         card = self.card
         if card.card_value > card.next_card_value:
             if self.player_input == "l":
@@ -39,7 +42,11 @@ class Director:
         self.total_score = self.score
 
     def show_score(self):
-         print(f"Your score is: {self.score}")
+        if self.score == 0:
+            self.is_playing = False
+            print(f"You lost!")
+        else: 
+            print(f"Your score is: {self.score}")
 
     def play_again(self):
         user_play = input("Play again? [y/n]: ")
@@ -47,8 +54,6 @@ class Director:
         
         self.is_playing = (user_play == "y")
        
-        if user_play !="y" or user_play !="n":
-            self.invalid_input()
 
     def invalid_input(self):
         self.is_playing = False
