@@ -2,7 +2,7 @@
 
 ## cse-210-01 - Tic-Tac-Toe
 
-## cse-210-02 -
+## cse-210-02 - HiLo
 
 ## cse-210-03 -
 
