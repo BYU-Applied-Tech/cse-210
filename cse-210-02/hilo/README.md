@@ -25,3 +25,76 @@ The program must also meet the following requirements.
 - The program must include class and method comments.
 - The program must have at least two classes.
 - The program must remain true to game play described in the overview.
+
+### Project Structure
+
+**Object**: Director
+
+**Responsibility**: Control sequence of play
+
+**Behaviors**:
+
+- start game
+- show card
+- get input
+- show next card
+- make evaluation
+- show score
+- play again? (end game)
+
+**State**:
+
+- card
+- next card
+- guess
+- score
+- total score
+
+**Object**: Card
+
+**Responsibility**: Create a random card with a value from 1-13
+
+**Behaviors**:
+
+- get value
+
+**State**:
+
+- value (1-13)
+
+---
+
+#### Class - Director
+
+#### Variables:
+- card: Card
+- next_card: Card
+- score: integer
+- guess: string
+- is_playing: boolean
+- total_score: integer
+
+#### Methods:
+- start_game(): None
+- show_card(): None
+- get_input(): None
+- show_next_card(): None
+- make_evaluation(): None
+- show_score(): None
+- play_again(): None
+
+#### Class - Card
+
+#### Variables:
+- value: integer
+
+#### Methods:
+- get_value(): None
+
+The relationship between objects: The director has cards.
+
+---
+
+**Norre Daroy**
+
+*norrej.daroy@gmail.com*
