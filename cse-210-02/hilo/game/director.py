@@ -14,16 +14,16 @@ class Director:
 
         while self.is_playing:
             card.show_card()
-            self.get_input()
+            self.get_inputs()
             card.show_next_card()
-            self.make_evaluation()
-            self.show_score()
+            self.do_updates()
+            self.do_outputs()
             self.play_again()
 
-    def get_input(self):
+    def get_inputs(self):
         self.player_input = input("Higher or lower? [h/l]: ")
 
-    def make_evaluation(self):
+    def do_updates(self):
         if not self.is_playing:
             return 
         
@@ -41,7 +41,7 @@ class Director:
 
         self.total_score = self.score
 
-    def show_score(self):
+    def do_outputs(self):
         if self.score == 0:
             self.is_playing = False
             print(f"You lost!")
