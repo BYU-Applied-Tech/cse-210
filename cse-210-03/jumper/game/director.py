@@ -17,10 +17,10 @@ class Director:
         """
         self._word = Word()
         self._jumper = Jumper()
+        self._terminal_service = TerminalService()
         self._is_playing = True
         self._is_correct = True
     
-        self._terminal_service = TerminalService()
         
     def start_game(self):
         """Starts the game by running the main game loop.
