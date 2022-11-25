@@ -1,3 +1,21 @@
 from game.casting.actor import Actor
 
-# TODO: Implement the Artifact class here. Don't forget to inherit from Actor!
+class Artifact(Actor):
+
+    def __init__(self):
+        self._message = ""
+        super().__init__()
+
+    def calc_points(self):
+        """Calculate points based on gem(*) or stone(O) collision
+        """""
+        points = 0 
+
+        if (self.get_text() == '*'):
+            points = 1
+        else:
+            points = -1
+        
+        return points
+
+    
