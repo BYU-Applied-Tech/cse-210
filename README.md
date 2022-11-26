@@ -6,4 +6,4 @@
 
 ## cse-210-03 - Jumper
 
-## cse-210-04 - Greed | Robot Finds Kitten (RFK)
+## cse-210-04 - Greed
