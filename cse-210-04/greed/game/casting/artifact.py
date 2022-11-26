@@ -3,7 +3,6 @@ from game.casting.actor import Actor
 class Artifact(Actor):
 
     def __init__(self):
-        self._message = ""
         super().__init__()
 
     def calc_points(self):
