@@ -25,11 +25,10 @@ class Jumper:
             ['^^^^^^^']
             ]
 
-    def display_parachute(self):
+    def get_parachute(self):
        """Display jumper in parachute
        """
-       for row in self._parachute:
-           print(' '.join([str(elem) for elem in row]))
+       return self._parachute
 
     def display_alive_jumper(self): 
        """Display for when a jumper is alive

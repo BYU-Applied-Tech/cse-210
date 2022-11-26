@@ -36,9 +36,14 @@ class Director:
 
     def _get_inputs(self):
         """Asks player to guess a letter"""
-        self._word.word_selected_guess()
-        print("\n")
-        self._jumper.display_parachute()
+        hint = self._word.get_word_guess()
+        self._terminal_service.write_text(' '.join(hint))
+        self._terminal_service.write_text("\n")
+        
+        parachute = self._jumper.get_parachute()
+        for row in parachute:
+           self._terminal_service.write_text(' '.join([str(elem) for elem in row]))
+
         player_guess = self._terminal_service.read_text("\nGuess a letter [a-z]: ")
         self._is_correct = self._word.evaluate_guess(player_guess)
 
@@ -52,11 +57,14 @@ class Director:
         """Provides hints for the player to guess word"""
         if self._word.get_status() == True:
             self._is_playing = False
-            print("\nYou guessed it right and saved the jumper!!\n")
+            self._terminal_service.write_text("\nYou guessed it right and saved the jumper!!\n")
             self._jumper.display_alive_jumper()
         elif self._jumper.get_status() == False:
             self._is_playing = False
-            self._word.word_selected_guess()
-            print("\n")
-            self._jumper.display_parachute()
-            print("You lost!! ") 
+            hint = self._word.get_word_guess()
+            self._terminal_service.write_text(' '.join(hint))
+            self._terminal_service.write_text("\n")
+            parachute = self._jumper.get_parachute()
+            for row in parachute:
+                self._terminal_service.write_text(' '.join([str(elem) for elem in row]))
+            self._terminal_service.write_text("You lost!! ") 

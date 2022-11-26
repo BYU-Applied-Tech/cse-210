@@ -20,10 +20,10 @@ class Word:
         word = random.choice(self._words)
         self._selected_word = list(word)
 
-    def word_selected_guess(self):
-        """Displays the lines for the letters
+    def get_word_guess(self):
+        """Get the hint
         """
-        print(' '.join(self._guess))
+        return self._guess
             
     def evaluate_guess(self, guess):
         """Evaluate each guess letter
